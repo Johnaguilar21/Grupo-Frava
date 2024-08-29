@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+@import url('http://weloveiconfonts.com/api/?family=fontawesome');
+
+[class*="fontawesome-"]:before {
+  font-family: 'FontAwesome', sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background: #222;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  color: #FFF;
+}
+
+.container {
+  max-width: 80em;
+  min-width: 60em;
+  margin: 0 auto;
+  padding: 0 2em; 
+}
+
+nav {
+  position: fixed;
+  width: calc(100% - 300px); /* Ajusta la anchura basada en la barra de desplazamiento */
+  top: 0;
+  z-index: 3;
+  left: 300px; /* Alinea el contenido nav correctamente */
+  
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-end; /* Alinea los elementos a la derecha */
+  }
+
+  li {
+    padding: 1.5em;
+    text-align: center;
+    transition: all 0.2s;
+
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+
+  a {
+    color: #FFF;
+    text-decoration: none;
+    transition: all 0.3s;
+
+    &:hover {
+      color: #DDD;
+    }
+  }
+}
+
+#icon {
+  display: inline-block;
+  padding-top: 0.7em;
+  font-size: 2em;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+#nav-bg {
+  background: #222;
+  position: fixed;
+  height: 5em;
+  width: 100%;
+  top: 0;
+  z-index: 1;
+}
+
+header {
+  position: relative;
+  background-image: url('/img/noche-oceano-paisaje-luna-llena-estrellas-brillan_107791-7397.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  padding: 10em 0 8em;
+  z-index: 2;
+  height: 600px;
+  display: flex;
+  align-items: center;
+
+  .container {
+    display: flex; /* Para colocar los divs en la misma fila */
+    justify-content: space-between; /* Para separar los divs a los lados izquierdo y derecho */
+    width: 100%;
+    padding: 0 2em;
+
+    .left-content {
+      flex: 1; /* Hace que el texto ocupe el espacio restante */
+      h1 {
+        font-size: 2em;
+        text-transform: uppercase;
+        margin-bottom: 1em;
+      }
+      p {
+        font-size: 1em;
+        line-height: 1.5;
+      }
+    }
+
+    .right-content {
+      flex: 1; /* Hace que la imagen ocupe el espacio restante */
+      display: flex;
+      justify-content: flex-end; /* Alinea la imagen a la derecha */
+      img {
+        max-width: 100%; /* Ajusta el tamaño de la imagen al contenedor */
+        height: auto;
+        border-radius: 8px; /* Opcional: redondea los bordes de la imagen */
+      }
+    }
+  }
+}
+
+#about {
+  background: #E7E3DA;
+  height: 70em;
+  padding: 5em 0;
+
+  p {
+    line-height: 2em;
+    font-size: 1.4em;
+    margin: 0;
+    color: #222;
+  }
+}
