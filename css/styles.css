@@ -89,17 +89,24 @@ header {
   align-items: center;
   overflow: hidden; /* Asegúrate de que el video no se salga del header */
 
-  #background-video {
+  .video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+  }
+
+  .video-background iframe {
     position: absolute;
     top: 50%;
     left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: -1;
+    width: 100vw;
+    height: 100vw;
     transform: translate(-50%, -50%);
-    background-size: cover;
+    pointer-events: none; /* Evita la interacción del usuario con el video */
   }
 
   .container {
@@ -110,7 +117,7 @@ header {
 
     .left-content {
       flex: 1; /* Hace que el texto ocupe el espacio restante */
-
+      margin-right: 100px;
       h1 {
         font-size: 2.5em;
         text-transform: uppercase;
@@ -127,6 +134,7 @@ header {
       flex: 1; /* Hace que la imagen ocupe el espacio restante */
       display: flex;
       justify-content: flex-end; /* Alinea la imagen a la derecha */
+      margin-left: 100px;
 
       img {
         max-width: 100%; /* Ajusta el tamaño de la imagen al contenedor */
@@ -136,6 +144,7 @@ header {
     }
   }
 }
+
 
 
 h2 {
