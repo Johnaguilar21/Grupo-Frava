@@ -1,9 +1,4 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
-@import url('http://weloveiconfonts.com/api/?family=fontawesome');
-
-[class*="fontawesome-"]:before {
-  font-family: 'FontAwesome', sans-serif;
-}
 
 *,
 *::before,
@@ -87,15 +82,25 @@ nav {
 
 header {
   position: relative;
-  background-image: url('/img/noche-oceano-paisaje-luna-llena-estrellas-brillan_107791-7397.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
   padding: 10em 0 8em;
   z-index: 2;
-  height: 600px;
+  height: 800px;
   display: flex;
   align-items: center;
+  overflow: hidden; /* Asegúrate de que el video no se salga del header */
+
+  #background-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+    background-size: cover;
+  }
 
   .container {
     display: flex; /* Para colocar los divs en la misma fila */
@@ -105,11 +110,13 @@ header {
 
     .left-content {
       flex: 1; /* Hace que el texto ocupe el espacio restante */
+
       h1 {
         font-size: 2em;
         text-transform: uppercase;
         margin-bottom: 1em;
       }
+
       p {
         font-size: 1em;
         line-height: 1.5;
@@ -120,6 +127,7 @@ header {
       flex: 1; /* Hace que la imagen ocupe el espacio restante */
       display: flex;
       justify-content: flex-end; /* Alinea la imagen a la derecha */
+
       img {
         max-width: 100%; /* Ajusta el tamaño de la imagen al contenedor */
         height: auto;
@@ -128,6 +136,7 @@ header {
     }
   }
 }
+
 
 h2 {
   font-size: 2.5em;
@@ -226,79 +235,68 @@ h2 {
   }
 }
 
+.footer-contact ul li img, .footer-social ul li img {
+  width: 20px; /* Ajusta el tamaño del icono */
+  height: auto;
+  margin-right: 10px; /* Espacio entre el icono y el texto */
+  vertical-align: middle; /* Alinea verticalmente el icono con el texto */
+}
+
 @keyframes scroll {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); } /* Ajusta este valor para el tamaño total del carrusel */
 }
 
 #footer {
-  background-color: #4a4a4a; /* Ajusta según el color deseado */
-  color: #f2f2f2;
+  background-color: #4a4a4a; /* Color de fondo */
+  color: #f2f2f2; /* Color del texto */
   padding: 40px 0;
   font-family: Arial, sans-serif;
-
+  h2{
+    color: #f2f2f2;
+  }
   .footer-wrapper {
-      max-width: 1200px;
-      margin: 0 auto;
+    max-width: 1200px;
+    margin: 0 auto;
 
-      .footer-content {
-          display: flex;
-          justify-content: space-between;
-          flex-wrap: wrap;
-          gap: 20px;
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      gap: 40px; /* Aumenta la separación entre las secciones */
+      flex-wrap: wrap;
+      padding: 0 20px; /* Añade padding lateral */
 
-          .footer-brand {
-              flex: 1 1 300px;
-              margin-bottom: 20px;
+      .footer-brand, .footer-contact, .footer-social {
+        flex: 1 1 300px; /* Asigna un tamaño mínimo para cada columna */
+        margin-bottom: 20px;
 
-              h2 {
-                  font-size: 24px;
-                  margin-bottom: 10px;
-              }
+        h2, h3 {
+          font-size: 18px;
+          margin-bottom: 10px;
+        }
 
-              p {
-                  font-size: 14px;
-                  line-height: 1.6;
-              }
-          }
-
-          .footer-contact, .footer-links, .footer-social {
-              flex: 1 1 200px;
-              margin-bottom: 20px;
-
-              h3 {
-                  font-size: 18px;
-                  margin-bottom: 10px;
-              }
-
-              ul {
-                  list-style: none;
-                  padding: 0;
-
-                  li {
-                      font-size: 14px;
-                      margin-bottom: 8px;
-
-                      a {
-                          color: #f2f2f2;
-                          text-decoration: none;
-
-                          &:hover {
-                              text-decoration: underline;
-                          }
-                      }
-                  }
-              }
-          }
+        p, ul {
+          font-size: 14px;
+          line-height: 1.6;
+        }
       }
+
+      .footer-brand {
+        max-width: 300px; /* Limita el ancho máximo de esta sección */
+      }
+
+      .footer-contact, .footer-social {
+        max-width: 300px; /* Limita el ancho máximo de estas secciones */
+      }
+    }
   }
 
   .footer-bottom {
-      text-align: center;
-      margin-top: 20px;
-      border-top: 1px solid #ccc;
-      padding-top: 20px;
-      font-size: 14px;
-      color: #ccc;
+    text-align: center;
+    margin-top: 20px;
+    border-top: 1px solid #ccc;
+    padding-top: 20px;
+    font-size: 14px;
+    color: #ccc;
   }
 }
