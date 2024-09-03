@@ -112,14 +112,14 @@ header {
       flex: 1; /* Hace que el texto ocupe el espacio restante */
 
       h1 {
-        font-size: 2em;
+        font-size: 2.5em;
         text-transform: uppercase;
         margin-bottom: 1em;
       }
 
       p {
-        font-size: 1em;
-        line-height: 1.5;
+        font-size: 1.3em;
+        line-height: 1.2;
       }
     }
 
@@ -235,12 +235,7 @@ h2 {
   }
 }
 
-.footer-contact ul li img, .footer-social ul li img {
-  width: 20px; /* Ajusta el tamaño del icono */
-  height: auto;
-  margin-right: 10px; /* Espacio entre el icono y el texto */
-  vertical-align: middle; /* Alinea verticalmente el icono con el texto */
-}
+
 
 @keyframes scroll {
   0% { transform: translateX(0); }
@@ -248,13 +243,15 @@ h2 {
 }
 
 #footer {
-  background-color: #4a4a4a; /* Color de fondo */
-  color: #f2f2f2; /* Color del texto */
+  background-color: #4a4a4a;
+  color: #f2f2f2;
   padding: 40px 0;
   font-family: Arial, sans-serif;
-  h2{
+
+  h2 {
     color: #f2f2f2;
   }
+
   .footer-wrapper {
     max-width: 1200px;
     margin: 0 auto;
@@ -262,41 +259,75 @@ h2 {
     .footer-content {
       display: flex;
       justify-content: space-between;
-      gap: 40px; /* Aumenta la separación entre las secciones */
+      gap: 120px; /* Aumenta la separación entre las secciones */
       flex-wrap: wrap;
       padding: 0 20px; /* Añade padding lateral */
 
-      .footer-brand, .footer-contact, .footer-social {
+      .footer-brand,
+      .footer-contact,
+      .footer-social {
         flex: 1 1 300px; /* Asigna un tamaño mínimo para cada columna */
         margin-bottom: 20px;
 
-        h2, h3 {
+        h2,
+        h3 {
           font-size: 18px;
           margin-bottom: 10px;
         }
 
-        p, ul {
+        p,
+        ul {
           font-size: 14px;
           line-height: 1.6;
+        }
+
+        li {
+          line-height: 2;
+          margin-top: 20px;
         }
       }
 
       .footer-brand {
         max-width: 300px; /* Limita el ancho máximo de esta sección */
+        img{
+          width: 200px;
+        }
       }
+    }
 
-      .footer-contact, .footer-social {
-        max-width: 300px; /* Limita el ancho máximo de estas secciones */
-      }
+    .footer-contact ul li img,
+    .footer-social ul li img {
+      width: 20px; /* Ajusta el tamaño del icono */
+      height: auto;
+      margin-right: 10px; /* Espacio entre el icono y el texto */
+      vertical-align: middle; /* Alinea verticalmente el icono con el texto */
     }
   }
 
   .footer-bottom {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 40px;
     border-top: 1px solid #ccc;
     padding-top: 20px;
     font-size: 14px;
     color: #ccc;
   }
 }
+#whatsapp-icon {
+  position: fixed;
+  bottom: 20px; /* Ajusta la distancia desde la parte inferior */
+  right: 20px;  /* Ajusta la distancia desde la derecha */
+  z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
+
+  img {
+      width: 60px; /* Ajusta el tamaño del ícono */
+      height: auto;
+      transition: transform 0.3s; /* Añade una transición suave al pasar el mouse */
+
+      &:hover {
+          transform: scale(1.1); /* Aumenta ligeramente el tamaño al pasar el mouse */
+      }
+  }
+}
+
+
