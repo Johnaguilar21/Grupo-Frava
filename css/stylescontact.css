@@ -1,0 +1,384 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: hsla(173, 77%, 83%, 1);
+  background-image: radial-gradient(
+      circle at 5% 1%,
+      hsla(250, 76%, 61%, 1) 7%,
+      transparent 84%
+    ),
+    radial-gradient(
+      circle at 7% 81%,
+      hsla(184, 91%, 91%, 1) 16%,
+      transparent 53%
+    ),
+    radial-gradient(
+      circle at 11% 29%,
+      hsla(213, 97%, 75%, 1) 8%,
+      transparent 74%
+    ),
+    radial-gradient(
+      circle at 39% 52%,
+      hsla(149, 93%, 64%, 1) 6%,
+      transparent 68%
+    ),
+    radial-gradient(
+      circle at 98% 64%,
+      hsla(118, 94%, 89%, 1) 2%,
+      transparent 67.8942%
+    );
+  background-blend-mode: normal, normal, normal, normal, normal;
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  color: #fff;
+}
+
+.container {
+  max-width: 80em;
+  min-width: 60em;
+  margin: 0 auto;
+  padding: 0 2em;
+}
+
+nav {
+  position: fixed;
+  width: calc(
+    100% - 300px
+  ); /* Ajusta la anchura basada en la barra de desplazamiento */
+  top: 0;
+  z-index: 3;
+  left: 300px; /* Alinea el contenido nav correctamente */
+
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-end; /* Alinea los elementos a la derecha */
+  }
+
+  li {
+    padding: 1.5em;
+    text-align: center;
+    transition: all 0.2s;
+
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+
+  a {
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s;
+
+    &:hover {
+      color: #ddd;
+    }
+  }
+}
+
+#icon {
+  display: inline-block;
+  padding-top: 0.7em;
+  font-size: 2em;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+#nav-bg {
+  background: #222;
+  position: fixed;
+  height: 5em;
+  width: 100%;
+  top: 0;
+  z-index: 1;
+}
+
+header {
+  position: relative;
+  padding: 10em 0 8em;
+  z-index: 2;
+  height: 800px;
+  display: flex;
+  align-items: center;
+  overflow: hidden; /* Asegúrate de que el video no se salga del header */
+
+  .video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+  }
+
+  .video-background iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    height: 100vw;
+    transform: translate(-50%, -50%);
+    pointer-events: none; /* Evita la interacción del usuario con el video */
+  }
+
+  .container {
+    display: flex; /* Para colocar los divs en la misma fila */
+    justify-content: space-between; /* Para separar los divs a los lados izquierdo y derecho */
+    width: 100%;
+    padding: 0 2em;
+
+    .left-content {
+      flex: 1; /* Hace que el texto ocupe el espacio restante */
+      margin-right: 100px;
+      h1 {
+        font-size: 2.5em;
+        text-transform: uppercase;
+        margin-bottom: 1em;
+      }
+
+      p {
+        font-size: 1.3em;
+        line-height: 1.2;
+      }
+    }
+
+    .right-content {
+      flex: 1; /* Hace que la imagen ocupe el espacio restante */
+      display: flex;
+      justify-content: flex-end; /* Alinea la imagen a la derecha */
+      margin-left: 100px;
+
+      img {
+        max-width: 100%; /* Ajusta el tamaño de la imagen al contenedor */
+        height: auto;
+        border-radius: 8px; /* Opcional: redondea los bordes de la imagen */
+      }
+    }
+  }
+}
+
+main {
+    .form_wrap {
+        width: 1200px;
+        height: 600px;
+        margin: 50px auto;
+        display: flex;
+        background: #fff;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+
+        .cantact_info {
+            width: 38%;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: #4091EC;
+            color: #fff;
+            text-align: center;
+
+            .info_title {
+                margin-bottom: 60px;
+
+                span {
+                    font-size: 100px;
+                    display: block;
+                    margin-bottom: 15px;
+                }
+
+                h2 {
+                    font-size: 35px;
+                }
+            }
+
+            .info_items {
+                p {
+                    display: flex;
+                    align-items: center;
+                    font-size: 16px;
+                    font-weight: 600;
+                    margin-bottom: 10px;
+
+                    span {
+                        font-size: 30px;
+                        margin-right: 10px;
+                    }
+                }
+            }
+        }
+
+        .form_contact {
+            width: 62%;
+            padding: 30px 40px;
+            display: flex;
+            flex-direction: column;
+            color: #222;
+            h2 {
+                font-size: 25px;
+                font-weight: 600;
+                color: #303030;
+                margin-bottom: 30px;
+            }
+
+            .user_info {
+                display: flex;
+                flex-direction: column;
+
+                label {
+                    font-weight: 600;
+                    margin-bottom: 5px;
+                }
+
+                input,
+                textarea {
+                    width: 100%;
+                    padding: 8px 0px 5px;
+                    margin-bottom: 20px;
+                    border: none;
+                    border-bottom: 2px solid #D1D1D1;
+                    font-size: 14px;
+                    color: #5A5A5A;
+                }
+
+                textarea {
+                    resize: vertical;
+                }
+
+                input[type="button"] {
+                    width: 180px;
+                    background: #4091EC;
+                    padding: 10px;
+                    border: none;
+                    border-radius: 25px;
+                    color: #fff;
+                    font-size: 16px;
+                    font-weight: 600;
+                    cursor: pointer;
+
+                    &:hover {
+                        background: #3371B6;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+#footer {
+  background-color: #4a4a4a;
+  color: #f2f2f2;
+  padding: 40px 0;
+  font-family: Arial, sans-serif;
+
+  h2 {
+    color: #f2f2f2;
+  }
+
+  .footer-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      gap: 120px; /* Aumenta la separación entre las secciones */
+      flex-wrap: wrap;
+      padding: 0 20px; /* Añade padding lateral */
+
+      .footer-brand,
+      .footer-contact,
+      .footer-social {
+        flex: 1 1 300px; /* Asigna un tamaño mínimo para cada columna */
+        margin-bottom: 20px;
+
+        h2,
+        h3 {
+          font-size: 18px;
+          margin-bottom: 10px;
+        }
+
+        p,
+        ul {
+          font-size: 14px;
+          line-height: 1.6;
+        }
+
+        li {
+          line-height: 2;
+          margin-top: 20px;
+        }
+      }
+
+      .footer-brand {
+        max-width: 300px; /* Limita el ancho máximo de esta sección */
+        img {
+          width: 200px;
+        }
+      }
+    }
+
+    .footer-contact ul li img,
+    .footer-social ul li img {
+      width: 20px; /* Ajusta el tamaño del icono */
+      height: auto;
+      margin-right: 10px; /* Espacio entre el icono y el texto */
+      vertical-align: middle; /* Alinea verticalmente el icono con el texto */
+    }
+  }
+
+  .footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    border-top: 1px solid #ccc;
+    padding-top: 20px;
+    font-size: 14px;
+    color: #ccc;
+  }
+}
+#whatsapp-icon {
+  position: fixed;
+  bottom: 20px; /* Ajusta la distancia desde la parte inferior */
+  right: 20px; /* Ajusta la distancia desde la derecha */
+  z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
+
+  img {
+    width: 60px; /* Ajusta el tamaño del ícono */
+    height: auto;
+    transition: transform 0.3s; /* Añade una transición suave al pasar el mouse */
+
+    &:hover {
+      transform: scale(
+        1.1
+      ); /* Aumenta ligeramente el tamaño al pasar el mouse */
+    }
+  }
+}
+#map-container-1,
+#map-container-2,
+#map-container-3 {
+    width: 100%;
+    height: 500px;
+    margin: 20px 0;
+}
+
+#map-container-2 {
+    border: 2px solid #4091EC;
+    border-radius: 10px;
+}
+
+
